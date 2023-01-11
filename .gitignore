@@ -6,3 +6,6 @@
 /WebSockets/bin/Debug/net6.0-windows
 /WebSockets/obj
 /WebSockets/WebSockets.csproj.user
+/Reflection/Reflection/.vs
+/Reflection/Reflection/bin/Debug/net6.0
+/Reflection/Reflection/obj

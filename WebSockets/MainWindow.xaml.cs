@@ -1,28 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
+using System.Net;
+using System.Net.Http;
+using System.Net.WebSockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WebSockets
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    // https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/sockets/sockets-overview
+
+    // https://www.tabsoverspaces.com/233883-simple-websocket-client-and-server-application-using-dotnet
     public partial class MainWindow : Window
     {
+        private SendMessageToWebHook _webHookSender = new SendMessageToWebHook();
+
         public MainWindow()
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Sending");
+            _webHookSender.SendMessage("Hello web hook");
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        { }
     }
 }
